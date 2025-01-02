@@ -1,0 +1,17 @@
+name: Run CICD1
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_call:
+
+jobs:
+  security-scan:
+    name: Run semgrep
+    uses: ramesherrorhunter/semgrep/.github/workflows/semgrep.yml@main
+    with:
+      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_API_TOKEN}}
