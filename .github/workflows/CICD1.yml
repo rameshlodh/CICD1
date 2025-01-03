@@ -12,6 +12,6 @@ on:
 jobs:
   security-scan:
     name: Run semgrep
-    uses: ramesherrorhunter/semgrep/.github/workflows/semgrep.yml@main
+    uses: ${{ secrets.WORKFLOW_USER_NAME }}/semgrep/.github/workflows/semgrep.yml@main
     secrets:
       SEMGREP_API_TOKEN: ${{ secrets.SEMGREP_API_TOKEN}}
